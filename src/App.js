@@ -1,11 +1,8 @@
 import React, { useState, useRef } from 'react';
-// ICONS REMOVED FOR COMPATIBILITY
-
 
 export default function GroceryRequestForm() {
   const videoRef = useRef(null);
   const canvasRef = useRef(null);
-  const fileInputRef = useRef(null);
 
   const [formData, setFormData] = useState({
     storePreference: 'HEB',
@@ -215,7 +212,7 @@ export default function GroceryRequestForm() {
                     <h3 className="text-lg font-semibold text-gray-800">{label}</h3>
                     {formData.categories[key].photo ? (
                       <div className="flex items-center gap-2">
-                        <Check className="text-green-500" size={20} />
+                        <span className="text-2xl">✓</span>
                         <span className="text-sm text-green-600 font-medium">Photo captured</span>
                       </div>
                     ) : null}
@@ -233,17 +230,15 @@ export default function GroceryRequestForm() {
                         <div className="flex gap-2">
                           <button
                             onClick={() => startCamera(key)}
-                            className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 flex items-center gap-2 text-sm"
+                            className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 text-sm font-medium"
                           >
-                            <Camera size={16} />
-                            Retake Photo
+                            📷 Retake Photo
                           </button>
                           <button
                             onClick={() => deletePhoto(key)}
-                            className="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 flex items-center gap-2 text-sm"
+                            className="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 text-sm font-medium"
                           >
-                 #removed
-                            Remove
+                            🗑️ Remove
                           </button>
                         </div>
                       </div>
@@ -252,7 +247,7 @@ export default function GroceryRequestForm() {
                         onClick={() => startCamera(key)}
                         className="w-full py-8 flex flex-col items-center gap-2 text-gray-600 hover:text-indigo-600 transition"
                       >
-                       #removed
+                        <span className="text-4xl">📷</span>
                         <span className="font-medium">Take Photo</span>
                         <span className="text-sm text-gray-500">Tap to open camera</span>
                       </button>
@@ -314,8 +309,7 @@ export default function GroceryRequestForm() {
                 : 'bg-indigo-600 hover:bg-indigo-700'
             }`}
           >
-         #removed
-            {submitted ? 'Request Submitted!' : 'Submit Grocery Request'}
+            {submitted ? '✓ Request Submitted!' : '📤 Submit Grocery Request'}
           </button>
         </div>
 
@@ -350,17 +344,15 @@ export default function GroceryRequestForm() {
               <div className="flex gap-3">
                 <button
                   onClick={() => capturePhoto(cameraActive)}
-                  className="flex-1 py-3 bg-indigo-600 text-white rounded-lg font-semibold hover:bg-indigo-700 flex items-center justify-center gap-2"
+                  className="flex-1 py-3 bg-indigo-600 text-white rounded-lg font-semibold hover:bg-indigo-700"
                 >
-                  <Camera size={20} />
-                  Capture Photo
+                  📷 Capture Photo
                 </button>
                 <button
                   onClick={stopCamera}
-                  className="flex-1 py-3 bg-gray-300 text-gray-700 rounded-lg font-semibold hover:bg-gray-400 flex items-center justify-center gap-2"
+                  className="flex-1 py-3 bg-gray-300 text-gray-700 rounded-lg font-semibold hover:bg-gray-400"
                 >
-                  <X size={20} />
-                  Cancel
+                  ✕ Cancel
                 </button>
               </div>
             </div>
