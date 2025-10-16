@@ -1,5 +1,6 @@
 import React, { useState, useRef } from 'react';
-import { ChevronDown, Plus, Trash2, Send, Camera, X, Check } from 'lucide-react';
+// ICONS REMOVED FOR COMPATIBILITY
+
 
 export default function GroceryRequestForm() {
   const videoRef = useRef(null);
@@ -241,7 +242,7 @@ export default function GroceryRequestForm() {
                             onClick={() => deletePhoto(key)}
                             className="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 flex items-center gap-2 text-sm"
                           >
-                            <Trash2 size={16} />
+                 #removed
                             Remove
                           </button>
                         </div>
@@ -251,7 +252,7 @@ export default function GroceryRequestForm() {
                         onClick={() => startCamera(key)}
                         className="w-full py-8 flex flex-col items-center gap-2 text-gray-600 hover:text-indigo-600 transition"
                       >
-                        <Camera size={32} />
+                       #removed
                         <span className="font-medium">Take Photo</span>
                         <span className="text-sm text-gray-500">Tap to open camera</span>
                       </button>
@@ -313,7 +314,7 @@ export default function GroceryRequestForm() {
                 : 'bg-indigo-600 hover:bg-indigo-700'
             }`}
           >
-            <Send size={20} />
+         #removed
             {submitted ? 'Request Submitted!' : 'Submit Grocery Request'}
           </button>
         </div>
